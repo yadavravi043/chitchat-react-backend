@@ -10,6 +10,10 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+  res.json("server started");
+})
+
 // mongoose
 //   .connect(process.env.MONGO_URL, {
 //     useNewUrlParser: true,
