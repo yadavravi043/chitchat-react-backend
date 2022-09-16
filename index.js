@@ -26,7 +26,9 @@ app.get("/",(req,res)=>{
 //   .catch((err) => {
 //     console.log(err.message);
 //   });
-const db=process.env.DATABASE_ATLAS
+// const db=process.env.DATABASE_ATLAS
+const db="mongodb+srv://ravi1:mongo123@cluster0.20zl3qv.mongodb.net/chatapp?retryWrites=true&w=majority"
+
 mongoose
   .connect(db)
   .then(() => console.log("Database connected successfully"))
