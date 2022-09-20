@@ -47,11 +47,11 @@ const io = socket(server, {
   },
 });
 
-global.onlineUsers = new Map();
+global.onlineUsers = new Map();//nodejs global object
 io.on("connection", (socket) => {
   global.chatSocket = socket;
   socket.on("add-user", (userId) => {
-    onlineUsers.set(userId, socket.id);
+    onlineUsers.set(userId, socket.id);//set the userid and socket id of current user
   });
 
   socket.on("send-msg", (data) => {
