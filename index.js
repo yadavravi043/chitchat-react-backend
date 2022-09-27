@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,res)=>{
-  res.json("server started successfully");
+  res.json("server started ");
 })
 
 // mongoose
