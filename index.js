@@ -15,18 +15,6 @@ app.get("/",(req,res)=>{
   res.json("server started ");
 })
 
-// mongoose
-//   .connect(process.env.MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("DB Connetion Successfull");
-//   })
-//   .catch((err) => {
-//     console.log(err.message);
-//   });
-// const db=process.env.DATABASE_ATLAS
 const db="mongodb+srv://ravi1:mongo123@cluster0.20zl3qv.mongodb.net/chatapp?retryWrites=true&w=majority"
 
 mongoose
@@ -51,7 +39,7 @@ const io = socket(server, {
 global.onlineUsers = new Map();//nodejs global object
 io.on("connection", (socket) => {
   global.chatSocket = socket;
-  socket.on("add-user", (userId) => {
+  socket.on("add-user", (userId) => { //add  user and send msg is events
     onlineUsers.set(userId, socket.id);//set the userid and socket id of current user
   });
 
